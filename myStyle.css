@@ -18,11 +18,75 @@ header{
     width: 100%;
     height: 69px;
     background-color: #EC362D;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
 }
 
-header p{
+h1{
     font-size: 37px;
     font-weight: 700;
     color: #FFFFFF;
 }
+
+main{
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 77px 195px;
+}
+
+h2{
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.firstQuizz{
+    width: 1051px;
+    height: 181px;
+    border: 1px dashed #D5D5D5;
+    border-radius: 5px;
+    margin-top: 69px;
+    margin-bottom: 77px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    background-color: #FAFAFA;
+    padding: 33px 45px;
+}
+
+.firstQuizz p{
+    font-size: 20px;
+    font-weight: 400;
+    color: #B9B9B9;
+}
+
+.firstQuizz button{
+    width: 151px;
+    height: 40px;
+    border: 1px dashed #EC362D;
+    border-radius: 50px;
+    margin-top: 30px;
+    background-color: #FAFAFA;
+    text-align: center;
+}
+
+.firstQuizz button p{
+    font-size: 21px;
+    font-weight: 400;
+    color: #EC362D;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+
