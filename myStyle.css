@@ -24,6 +24,7 @@ header{
     position: fixed;
     top: 0px;
     left: 0px;
+    z-index: 1;
 }
 
 h1{
@@ -40,7 +41,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 77px 195px;
+    padding: 69px 15px;
 }
 
 h2{
@@ -49,18 +50,23 @@ h2{
     color: #000000;
 }
 
+.container{
+    width: 100%;
+    
+    background-color: palevioletred;
+}
+
 .firstQuizz{
-    width: 1051px;
+    width: 100%;
     height: 181px;
     border: 1px dashed #D5D5D5;
     border-radius: 5px;
-    margin-top: 69px;
-    margin-bottom: 77px;
+    margin: 60px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;    
     background-color: #FAFAFA;
-    padding: 33px 45px;
+    padding: 33px;
 }
 
 .firstQuizz p{
@@ -77,6 +83,7 @@ h2{
     margin-top: 30px;
     background-color: #FAFAFA;
     text-align: center;
+    cursor: pointer;
 }
 
 .firstQuizz button p{
@@ -85,8 +92,42 @@ h2{
     color: #EC362D;
 }
 
-button:hover{
-    cursor: pointer;
+.allQuizzes{
+    display: flex;
+    justify-content: space-between, 15px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    background-color: green;
 }
+
+.boxQuizz{
+    width: 340px;
+    height: 181px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(img/image-quizz.png);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: end;
+    position: relative;   
+}
+
+.boxQuizz img{
+    width: 340px;
+    height: 181px;
+    border-radius: 5px;
+}
+
+.boxQuizz p{
+    font-size: 19px;
+    font-weight: 400;
+    color: #FFFFFF;
+    position: absolute;
+    margin: 0px 15px 5px 15px;
+    text-align: center;
+}
+
+
+
+
 
 
