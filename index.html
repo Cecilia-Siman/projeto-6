@@ -19,7 +19,7 @@
         <div class="telaHome">
 
             <!-- Quando ainda não fez nenhum quizz -->
-            <div class="firstQuizz">
+            <div class="firstQuizz hide">
                 <p>Você não criou nenhum</p>
                 <p>quizz ainda :(</p>
                 <button onclick="novoQuizz()">
@@ -28,13 +28,27 @@
             </div>
 
             <!-- Depois que fizer o primeiro quizz -->
-            <div class="myQuizzes hide">
-
+            
+            <div class="categoriaQuizz">
+                <h2>Meus Quizzes</h2>
+                <ion-icon name="add-circle" onclick="novoQuizz()"></ion-icon>
+            </div>
+            <div class="myQuizzes">
+                
+                <div class="boxQuizz">                    
+                    <p>Titulo do quizz e estou querendo saber como vai ficar o layout dessa bagaça</p>                    
+                </div>
+                <div class="boxQuizz">                    
+                    <p>Titulo do QUIZZ</p>
+                </div>
             </div>
 
             <!-- Todos quizzes disponiveis -->
-            <div class="allQuizzes">
+            <div class="categoriaQuizz">
                 <h2>Todos os Quizzes</h2>
+            </div>
+            <div class="allQuizzes">
+                
                 <div class="boxQuizz">                    
                     <p>Titulo do quizz e estou querendo saber como vai ficar o layout dessa bagaça</p>                    
                 </div>
@@ -81,10 +95,13 @@
         <!-- Tela Criação do Quizz Parte 4 (Finalização do Quizz)-->
         <div class="finalizacaoQuizz  hide"></div>
 
+        <!-- Tela realizando o Quizz-->
+        <div class="realizarQuizz"></div>
+
 
     </main>
 
-
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
