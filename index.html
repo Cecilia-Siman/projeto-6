@@ -13,7 +13,7 @@
         <h1>BuzzQuizz</h1>
     </header>
 
-    <main>
+    <main class="hide">
         <div class="firstQuizz">
             <p>Você não criou nenhum</p>
             <p>quizz ainda :(</p>
@@ -32,5 +32,20 @@
         </div>
 
     </main>
+
+    <div class="telaInicialQuizz">
+        <p>Comece pelo começo</p>
+        <div>
+            <input type="text" id="tituloQuizz" placeholder="Título do seu quizz">  
+            <input type="text" id="imgQuizz" placeholder="URL da imagem do seu quizz">  
+            <input type="text" id="qtdPerguntasQuizz" placeholder="Quantidade de perguntas do quizz">  
+            <input type="text" id="qtdNiveisQuizz" placeholder="Quantidade de níveis do quizz">       
+        </div>
+        <button onclick="criarQuizz()"> <p>Prosseguir para criar perguntas</p> </button>
+    </div>
+    <div class="montarQuizz  hide"></div>
+
+
+    <script src="scripts.js"></script>
 </body>
 </html>
