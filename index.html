@@ -60,7 +60,6 @@
         <!-- Fim da Tela Inicial/Principal -->
 
         <!-- Tela Criação do Quizz Parte 1 (Info basicas do Quizz)-->
-
         <div class="telaInicialQuizz hide">
             <p>Comece pelo começo</p>
             <div>
@@ -69,11 +68,15 @@
                 <input type="text" id="qtdPerguntasQuizz" placeholder="Quantidade de perguntas do quizz">  
                 <input type="text" id="qtdNiveisQuizz" placeholder="Quantidade de níveis do quizz">       
             </div>
-            <button onclick="criarQuizz()"> <p>Prosseguir para criar perguntas</p> </button>
+            <button class="botaoMontarQuizz" onclick="criarQuizz()"> <p>Prosseguir para criar perguntas</p> </button>
         </div>
 
         <!-- Tela Criação do Quizz Parte 2 (Perguntas Quizz) -->
-        <div class="perguntasQuizz  hide"></div>
+        <div class="perguntasQuizz  hide">
+            <p>Crie suas perguntas</p>
+            <div class="containerPerguntas"></div>
+            <button class="botaoMontarQuizz" onclick="criarNiveis()"> <p>Prosseguir para criar níveis</p> </button>
+        </div>
 
         <!-- Tela Criação do Quizz Parte 3 (Niveis Quizz) -->
         <div class="niveisQuizz  hide"></div>
@@ -84,7 +87,9 @@
 
     </main>
 
-
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
