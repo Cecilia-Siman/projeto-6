@@ -21,7 +21,6 @@ function criarQuizz(){
     if (verificador1===false || verificador2===false || verificador3===false || verificador4===false){
         alert("Preencha os dados corretamente!");
     } else {
-        //alert("bora!");
         montarPerguntas(qtdPerguntas);   
     }
 }
