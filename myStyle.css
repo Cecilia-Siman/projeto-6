@@ -148,6 +148,7 @@ h2{
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: scroll;
 }
 
 .telaInicialQuizz>p{
@@ -156,13 +157,11 @@ h2{
     font-weight: 700;
     font-size: 23px;
     color: #000000;
-    position: fixed;
-    top: 140px;
+    margin-top: 140px;
 }
 
 .telaInicialQuizz>div{
-    position: fixed;
-    top: 194px;
+    margin-top: 30px;
     width: 600px;
     height: 256px;
     
@@ -191,8 +190,7 @@ input{
 }
 
 .telaInicialQuizz button{
-    position: fixed;
-    top: 535px; 
+    margin-top: 85px; 
     width: 370px;
     height: 54px;
     background-color: #EC362D; 
@@ -203,6 +201,8 @@ input{
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
+    margin-bottom: 44px;
+    padding: 17px 0px;
 }
 
 .perguntasQuizz{
@@ -214,7 +214,7 @@ input{
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    overflow-y: scroll;
 }
 
 .perguntasQuizz>p{
@@ -223,12 +223,11 @@ input{
     font-weight: 700;
     font-size: 23px;
     color: #000000;
-    position: fixed;
-    top: 140px;
+    margin-top: 140px;
 }
 
 .containerPerguntas{
-    margin-top: 170px;
+    margin-top: 30px;
 }
 
 .pergunta {
@@ -251,7 +250,7 @@ input{
 
 .pergunta ion-icon{
     position: absolute;
-    top: 30px;
+    top: 26px;
     right: 20px;
     font-size: 26px;
     color: #000000;
@@ -269,10 +268,13 @@ input{
 
 .perguntasQuizz button{
     margin-top: 44px; 
+    margin-bottom: 44px;
+    padding: 17px 0px;
     width: 370px;
     height: 54px;
     background-color: #EC362D; 
     border-radius: 15px;
+    box-sizing: initial;
     border: none;
     color: #FFF5F4;
     font-family: 'Roboto', sans-serif;

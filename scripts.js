@@ -67,6 +67,7 @@ function editar(classe){
 }
 
 /*function criarNiveis(){
+    let arrayPerguntas;
 
 }*/
 
