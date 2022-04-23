@@ -149,7 +149,9 @@ h2{
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
 }
 
 .telaInicialQuizz>p{
@@ -158,15 +160,14 @@ h2{
     font-weight: 700;
     font-size: 23px;
     color: #000000;
-    position: fixed;
-    top: 140px;
+    margin-top: 140px;
 }
 
 .telaInicialQuizz>div{
-    position: fixed;
+    margin-top: 30px;
     width: 600px;
     height: 256px;
-    top: 194px;
+    
     background: #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
     display: flex;
@@ -175,7 +176,7 @@ h2{
     padding: 20px 16px;
 }
 
-.telaInicialQuizz input{
+input{
     width: 564px;
     height: 46px;
     border-radius: 5px;
@@ -183,7 +184,7 @@ h2{
     padding-left: 18px;
 }
 
-.telaInicialQuizz ::placeholder{
+::placeholder{
     font-family: 'Roboto', sans-serif;
     font-style: italic;
     font-weight: 400;
@@ -192,8 +193,7 @@ h2{
 }
 
 .telaInicialQuizz button{
-    position: fixed;
-    top: 535px;  
+    margin-top: 85px; 
     width: 370px;
     height: 54px;
     background-color: #EC362D; 
@@ -204,15 +204,86 @@ h2{
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
+    margin-bottom: 44px;
+    padding: 17px 0px;
 }
 
 .perguntasQuizz{
     position: fixed;
     top: 0;
     left: 0;
-    background-color: blue;
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.perguntasQuizz>p{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    color: #000000;
+    margin-top: 140px;
+}
+
+.containerPerguntas{
+    margin-top: 30px;
+}
+
+.pergunta {
+    width: 600px;
+    margin-top: 24px;
+    padding: 30px 18px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.pergunta p{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #000000;
+    margin-top: 15px;
+}
+
+.pergunta ion-icon{
+    position: absolute;
+    top: 26px;
+    right: 20px;
+    font-size: 26px;
+    color: #000000;
+}
+
+.pergunta p:nth-child(1){
+    margin-top: 0px;
+}
+
+.pergunta input{
+    width: 100%;
+    height: 46px;
+    margin-top: 15px;
+}
+
+.perguntasQuizz button{
+    margin-top: 44px; 
+    margin-bottom: 44px;
+    padding: 17px 0px;
+    width: 370px;
+    height: 54px;
+    background-color: #EC362D; 
+    border-radius: 15px;
+    box-sizing: initial;
+    border: none;
+    color: #FFF5F4;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
 }
 
 
@@ -225,6 +296,15 @@ h2{
         width: 100%;
     }
     .telaInicialQuizz input {
+        width: 100%;
+    }
+    .containerPerguntas{
+        width: 100%;
+    }
+    .pergunta{
+        width: 100%;
+    }
+    .pergunta input {
         width: 100%;
     }
 }
