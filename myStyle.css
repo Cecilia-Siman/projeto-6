@@ -118,6 +118,7 @@ h2{
     margin-bottom: 15px;
     margin-right: 15px;
     display: flex;
+    justify-content: center;
     align-items: end;
     position: relative;  
     cursor: pointer; 
@@ -134,8 +135,10 @@ h2{
     font-weight: 400;
     color: #FFFFFF;
     position: absolute;
-    margin: 0px 15px 5px 15px;
+    margin: 0px 15px 10px 15px;
     text-align: center;
+    display: flex;
+
 }
 
 
