@@ -28,24 +28,31 @@ header{
     z-index: 1;
 }
 
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.telaHome{
+    max-width: 1082px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 69px 17px;
+}
+
 h1{
     font-size: 37px;
     font-weight: 700;
     color: #FFFFFF;
     cursor: default;
 }
-
-main{
-    width: 100%;
-    height: 100%;
-    background-color: aqua;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 69px 15px;
-}
-
 
 h2{
     font-size: 20px;
@@ -68,6 +75,9 @@ h2{
 }
 
 .firstQuizz p{
+    max-width: 250px;
+    word-wrap: break-word;
+    text-align: center;
     font-size: 20px;
     font-weight: 400;
     color: #B9B9B9;
@@ -92,36 +102,38 @@ h2{
 
 .categoriaQuizz{
     width: 100%;
+    margin-top: 40px;
     display: flex;
     align-items: center;    
-    background-color: purple;
 }
 
 .categoriaQuizz ion-icon{
     font-size: 25px;
+    margin: 0 15px;
     color: #EC362D;
-    margin-left: 15px;
     cursor: pointer;
 }
 
 .allQuizzes, .myQuizzes{
     display: flex;
     flex-wrap: wrap;
-    background-color: green;
 }
 
 .boxQuizz{
-    width: 340px;
+    width: 334px;
     height: 181px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(img/image-quizz.png);
+    /*background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(img/image-quizz.png);*/
+    background-color: #000000;
     border-radius: 5px;
     margin-bottom: 15px;
     margin-right: 15px;
     display: flex;
     justify-content: center;
     align-items: end;
+    text-align: center;
     position: relative;  
     cursor: pointer; 
+    word-wrap: break-word;
 }
 
 .boxQuizz img{
@@ -135,11 +147,158 @@ h2{
     font-weight: 400;
     color: #FFFFFF;
     position: absolute;
-    margin: 0px 15px 10px 15px;
-    text-align: center;
-    display: flex;
-
+    margin: 0px 15px 10px 15px;    
+    text-align: center;   
 }
+
+.telaQuizz{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.capaQuizz{
+    width: 100%;
+    height: 227px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 69px 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), url(img/image-quizz.png);
+}
+
+.capaQuizz p{
+    font-size: 39px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.boxPerguntas, .boxResultado{
+    width: 760px;
+    height: auto;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 42px;    
+    background-color: #FFFFFF;
+}
+
+.tituloBox{
+    width: 100%;
+    height: 137px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orangered;
+    text-align: center;
+    padding: 5px;
+}
+
+.tituloBox p, .tituloBoxResultado p{
+    font-size: 23px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.opcoesBox{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #FFFFFF;
+}
+
+.alternativaBox{
+    width: 330px;
+    height: 175px;
+    cursor: pointer;
+    margin: 20px 0 30px 0;
+}
+
+.alternativaBox img{
+    width: 330px;
+    height: 175px;
+}
+
+.alternativaBox p{    
+    font-size: 21px;
+    font-weight: 700;
+    margin-top: 8px;
+    
+    color: #000000;
+}
+
+.boxResultado{
+    height: auto;
+}
+
+.tituloBoxResultado{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    text-align: center;
+    padding: 5px;
+}
+
+.resultadoBox{
+    width: 100%;
+    height: 273px;
+    margin-top: 20px;
+    display: flex;   
+}
+
+.resultadoBox img {
+    width: 364px;
+    height: 273px;
+}
+
+.resultadoBox p{
+    font-size: 19px;
+    font-weight: 700;
+    color: #000000;
+    margin: 10px 20px 0 20px;
+}
+
+.botoesFinalizarQuizz{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btnReiniciarQuizz{
+    width: 260px;
+    height: 52px;
+    background: #EC362D;
+    border-radius: 15px;
+    font-size: 21px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    cursor: pointer;  
+}
+
+.botoesFinalizarQuizz p{
+    margin: 20px 0 50px 0;
+    font-size: 21px;
+    color: #818181;
+    cursor: pointer;
+}
+
+
+
+
+
 
 
 .telaInicialQuizz{
@@ -289,6 +448,153 @@ input{
 
 .hide{
     display: none;
+}
+
+@media (max-width: 1082px){
+    .telaHome{
+        max-width: 760px;        
+    }
+
+    .allQuizzes, .myQuizzes{
+        justify-content: space-between;
+    }
+
+    .boxQuizz{
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 760px){
+    
+    .telaHome{
+        max-width: 375px;        
+    }
+
+    .firstQuizz{
+        margin: 30px 0px;  
+    }
+
+    .boxQuizz{
+        width: 350px;
+        height: 191px;
+        margin-right: 0px;
+        justify-content: space-between;
+    }
+    
+    .boxQuizz img{
+        width: 350px;
+        height: 191px;
+    }
+
+    .categoriaQuizz{       
+        justify-content: space-between;        
+    }
+
+    .categoriaQuizz{
+        margin-top: 20px;
+    }
+
+    /* Tela Quizz */
+
+    .capaQuizz{
+        height: 142px;
+        margin: 69px 0 24px 0;
+    }
+
+    .capaQuizz p{
+        font-size: 19px;
+    }
+
+    .boxPerguntas{
+        width: 375px;
+        height: 436px;
+        padding: 18px 18px 0 18px;
+        margin-bottom: 30px;    
+    }
+    
+    .tituloBox{
+        width: 100%;
+        height: 89px;
+        margin-bottom: 13px;
+    }
+    
+    .tituloBox p{
+        font-size: 19px;
+    }
+    
+    .alternativaBox{
+        width: 163px;
+        height: 113px;
+    }
+    
+    .alternativaBox img{
+        width: 163px;
+        height: 113px;
+    }
+    
+    .alternativaBox p{    
+        font-size: 13px;
+        font-weight: 700;
+        margin-top: 8px;
+        color: #000000;
+    }
+
+    /* Fim Tela Quizz */
+  
+    .boxResultado{
+        width: 375px;
+        height: 436px;
+        padding: 18px 18px 0 18px;
+    } 
+    .tituloBoxResultado{
+        height: 100px;
+    }
+
+    .tituloBoxResultado p{
+        font-size: 17px;
+    }
+    .resultadoBox{
+        flex-direction: column;
+        background-color: green;    
+    }
+
+    .resultadoBox img {
+        width: 100%;
+        height: 255px;
+    }
+
+    .resultadoBox p{
+        font-size: 17px;
+        margin: 10px 2px 10px 2px;
+    }
+
+    .botoesFinalizarQuizz{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btnReiniciarQuizz{
+        width: 260px;
+        height: 52px;
+        background: #EC362D;
+        border-radius: 15px;
+        font-size: 21px;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        cursor: pointer;  
+    }
+
+    .botoesFinalizarQuizz p{
+        margin: 20px 0 50px 0;
+        font-size: 21px;
+        color: #818181;
+        cursor: pointer;
+    }
+
 }
 
 @media (max-width: 614px){

@@ -16,12 +16,11 @@
     <main>
 
         <!-- Tela Inicial/Principal -->        
-        <div class="telaHome">
+        <div class="telaHome ">
 
             <!-- Quando ainda não fez nenhum quizz -->
-            <div class="firstQuizz hide">
-                <p>Você não criou nenhum</p>
-                <p>quizz ainda :(</p>
+            <div class="firstQuizz ">
+                <p>Você não criou nenhum quizz ainda :(</p>
                 <button onclick="novoQuizz()">
                     <p>Criar Quizz</p>
                 </button>
@@ -29,11 +28,11 @@
 
             <!-- Depois que fizer o primeiro quizz -->
             
-            <div class="categoriaQuizz">
+            <div class="categoriaQuizz hide">
                 <h2>Meus Quizzes</h2>
                 <ion-icon name="add-circle" onclick="novoQuizz()"></ion-icon>
             </div>
-            <div class="myQuizzes">
+            <div class="myQuizzes hide">
                 
                 <div class="boxQuizz">                    
                     <p>Titulo do quizz e estou querendo saber como vai ficar o layout dessa bagaça</p>                    
@@ -49,22 +48,23 @@
             </div>
             <div class="allQuizzes">
                 
-                <div class="boxQuizz">                    
+                <div class="boxQuizz" onclick="fazerQuizz()">                    
                     <p>Titulo do quizz e estou querendo saber como vai ficar o layout dessa bagaça</p>                    
+                    <img src="img/image-quizz.png">
                 </div>
-                <div class="boxQuizz">                    
+                <div class="boxQuizz" onclick="fazerQuizz()">                    
                     <p>Titulo do QUIZZ</p>
                 </div>
-                <div class="boxQuizz">                    
+                <div class="boxQuizz" onclick="fazerQuizz()">                    
                     <p>Titulo do QUIZZ</p>
                 </div>
-                <div class="boxQuizz">                    
+                <div class="boxQuizz" onclick="fazerQuizz()">                    
                     <p>Titulo do QUIZZ</p>
                 </div>
-                <div class="boxQuizz">                    
+                <div class="boxQuizz" onclick="fazerQuizz()">                    
                     <p>Titulo do QUIZZ</p>
                 </div>
-                <div class="boxQuizz">                    
+                <div class="boxQuizz" onclick="fazerQuizz()">                    
                     <p>Titulo do QUIZZ</p>
                 </div>
             </div>
@@ -100,7 +100,74 @@
         <div class="finalizacaoQuizz  hide"></div>
 
         <!-- Tela realizando o Quizz-->
-        <div class="realizarQuizz"></div>
+        <div class="telaQuizz hide">
+            <div class="capaQuizz">
+               <p>Qual seu nivel de otaku?</p>
+            </div>
+            <div class="boxPerguntas">
+                <div class="tituloBox">
+                    <p>Quem é mais top?</p> 
+                </div>
+                <div class="opcoesBox">
+                    <div class="alternativaBox">
+                        <img src="img/image-quizz.png">
+                        <p>Texto 1</p>
+                    </div>
+                    <div class="alternativaBox">
+                        <img src="img/image-quizz.png">
+                        <p>Texto 2</p>
+                    </div>
+                    <div class="alternativaBox">
+                        <img src="img/image-quizz.png">
+                        <p>Texto 3</p>
+                    </div>
+                    <div class="alternativaBox">
+                        <img src="img/image-quizz.png">
+                        <p>Texto 4</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="boxPerguntas">
+                <div class="tituloBox">
+                    <p>Quem é mais top?</p> 
+                </div>
+                <div class="opcoesBox">
+                    <div class="alternativaBox">
+                        <img src="img/image-quizz.png">
+                        <p>Texto 1</p>
+                    </div>
+                    <div class="alternativaBox">
+                        <img src="img/image-quizz.png">
+                        <p>Texto 2</p>
+                    </div>
+                    <div class="alternativaBox">
+                        <img src="img/image-quizz.png">
+                        <p>Texto 3</p>
+                    </div>
+                    <div class="alternativaBox">
+                        <img src="img/image-quizz.png">
+                        <p>Texto 4</p>
+                    </div>                    
+                </div>
+            </div>
+
+            <div class="resultadoQuizz">
+                <div class="boxResultado">
+                    <div class="tituloBoxResultado">
+                        <p>70% de acerto: Você é quase um expert!</p> 
+                    </div>
+                    <div class="resultadoBox">                        
+                            <img src="img/image-quizz.png">
+                            <p>Testando para ver o comportamento da disposição desse comentario no texto asism </p>                                                
+                    </div>
+                </div>
+                <div class="botoesFinalizarQuizz">
+                    <div class="btnReiniciarQuizz">Reiniciar Quizz</div>
+                    <p>Voltar pra home</p>
+                </div>
+            </div>
+        </div>
 
 
     </main>

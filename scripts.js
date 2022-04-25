@@ -1,3 +1,45 @@
+
+// INICIO PUXANDO QUIZZ TODOS DO AXIOS 
+
+const API = "https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes";
+
+carregarDados()
+
+function carregarDados() {
+    const promise = axios.get(API);
+    promise.then(renderizarQuizzes);
+    promise.catch(error);
+}
+
+function renderizarQuizzes(resposta){
+    const containerQuizz = document.querySelector(".allQuizzes");
+    containerQuizz.innerHTML = "";
+
+    for (let i=0; i < resposta.data.length; i++){        
+        const quizz = resposta.data[i];
+        containerQuizz.innerHTML += `
+            <div class="boxQuizz" onclick="fazerQuizz()">                    
+                <p>${quizz.title}</p>
+                <img src="${quizz.image}">                  
+            </div>
+        `
+    }
+}
+
+function error(){
+    console.log("deu ruim");
+}
+
+// FIM PUXANDO QUIZZ TODOS DO AXIOS 
+
+
+function fazerQuizz(){
+    let telaHome = document.querySelector(".telaHome");
+    telaHome.classList.add("hide");
+    let telaQuizz = document.querySelector(".telaQuizz");
+    telaQuizz.classList.remove("hide");
+}
+
 function novoQuizz(){
     let telaCriacao = document.querySelector(".telaInicialQuizz");
     telaCriacao.classList.remove("hide");
@@ -65,6 +107,9 @@ function editar(classe){
     let pergunta = document.querySelector("."+classe);
     pergunta.classList.toggle("hide");
 }
+
+
+
 
 /*function criarNiveis(){
     let arrayPerguntas;
