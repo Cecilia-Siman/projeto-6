@@ -115,10 +115,10 @@ function editar(classe){
 
 function criarNiveis(){
     atualizarObjeto()    
-    /*let teste = conferirPerguntas();
+    let teste = conferirPerguntas();
     if (teste === false){
         alert("Preencha os dados corretamente!");
-    } else*/ disporNiveis(); 
+    } else disporNiveis(); 
 }
 
 function atualizarObjeto(){
@@ -146,7 +146,13 @@ function atualizarObjeto(){
                 }
             }  
         }
+
+        quizz.questions[i-1].answers.sort(comparador);
     }
+}
+
+function comparador() { 
+	return Math.random() - 0.5; 
 }
 
 function conferirPerguntas(){
@@ -210,9 +216,10 @@ function disporNiveis(){
 function finalizarQuizz(){
     atualizarObjetoNiveis()    
     let teste = conferirNiveis();
-    /*if (teste === false){
+    if (teste === false){
         alert("Preencha os dados corretamente!");
-    } else */finalizar();
+    } else finalizar();
+    console.log(quizz);
 }
 
 
