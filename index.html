@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="myStyle.css">
     <title>BuzzQuizz</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
 </head>
 <body>
     <header>
@@ -94,10 +95,14 @@
         </div>
 
         <!-- Tela Criação do Quizz Parte 3 (Niveis Quizz) -->
-        <div class="niveisQuizz  hide"></div>
+        <div class="niveisQuizz hide">
+            <p>Agora, decida os níveis!</p>
+            <div class="containerNiveis"></div>
+            <button class="botaoMontarQuizz" onclick="finalizarQuizz()"> <p>Finalizar Quizz</p> </button>
+        </div>
 
         <!-- Tela Criação do Quizz Parte 4 (Finalização do Quizz)-->
-        <div class="finalizacaoQuizz  hide"></div>
+        <div class="finalizacaoQuizz hide"></div>
 
         <!-- Tela realizando o Quizz-->
         <div class="realizarQuizz"></div>
