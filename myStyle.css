@@ -61,6 +61,15 @@ h2{
     margin: 15px 0px;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
+
+ion-icon:hover{
+    cursor: pointer;
+}
+
 .firstQuizz{
     width: 100%;
     height: 181px;
@@ -446,6 +455,170 @@ input{
 }
 
 
+.niveisQuizz {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.niveisQuizz>p{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    color: #000000;
+    margin-top: 140px;
+}
+
+.containerPerguntas{
+    margin-top: 30px;
+}
+
+.nivel {
+    width: 600px;
+    margin-top: 24px;
+    padding: 30px 18px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.nivel p{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: #000000;
+    margin-top: 15px;
+}
+
+.nivel ion-icon{
+    position: absolute;
+    top: 26px;
+    right: 20px;
+    font-size: 26px;
+    color: #000000;
+}
+
+.nivel p:nth-child(1){
+    margin-top: 0px;
+}
+
+.nivel input{
+    width: 100%;
+    height: 46px;
+    margin-top: 15px;
+}
+
+.niveisQuizz input:nth-child(4){
+    height: 177px;
+    padding-bottom: 130px;
+}
+
+.niveisQuizz button{
+    margin-top: 44px; 
+    margin-bottom: 44px;
+    padding: 17px 0px;
+    width: 370px;
+    height: 54px;
+    background-color: #EC362D; 
+    border-radius: 15px;
+    box-sizing: initial;
+    border: none;
+    color: #FFF5F4;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.finalizacaoQuizz{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.finalizacaoQuizz>p{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    color: #000000;
+    margin-top: 140px;
+}
+
+.finalizacaoQuizz>div{
+    position: relative;
+    margin-top: 49px;
+    display: flex;
+    height: 266px;
+    width: 500px;
+}
+
+.finalizacaoQuizz img{
+    height: 266px;
+    width: 500px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.finalizacaoQuizz div p{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+
+.meuQuizz{
+    margin-top: 44px; 
+    padding: 17px 0px;
+    width: 370px;
+    height: 54px;
+    background-color: #EC362D; 
+    border-radius: 15px;
+    box-sizing: initial;
+    border: none;
+    color: #FFF5F4;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.voltarHome p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    color: #818181;   
+    margin-top: 22px;
+    margin-bottom: 30px;
+}
+
+.voltarHome{
+    border: none;
+    background-color: inherit;
+}
+
+
 .hide{
     display: none;
 }
@@ -598,19 +771,22 @@ input{
 }
 
 @media (max-width: 614px){
-    .telaInicialQuizz>div{
+    .telaInicialQuizz>div,.telaInicialQuizz input,.containerPerguntas,.pergunta,.pergunta input, .containerNiveis,.nivel, .nivel input{
         width: 100%;
     }
-    .telaInicialQuizz input {
-        width: 100%;
+    .finalizacaoQuizz>div,.finalizacaoQuizz img{
+        width: 340px;
+        height: 181px;
     }
-    .containerPerguntas{
-        width: 100%;
+    
+    .meuQuizz{
+        width: 221px;
+        height: 44px;
     }
-    .pergunta{
-        width: 100%;
+    .telaInicialQuizz input{
+        margin-bottom: 10px;
     }
-    .pergunta input {
-        width: 100%;
+    .telaInicialQuizz input:nth-last-child(1){
+        margin-bottom: 0px;
     }
 }
