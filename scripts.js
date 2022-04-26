@@ -7,18 +7,18 @@ carregarDados()
 
 function carregarDados() {
     const promise = axios.get(API);
-    promise.then(renderizarQuizzes);
+    promise.then(renderizarAllQuizzes);
     promise.catch(error);
 }
 
-function renderizarQuizzes(resposta){
-    const containerQuizz = document.querySelector(".allQuizzes");
-    containerQuizz.innerHTML = "";
+function renderizarAllQuizzes(resposta){
+    const containerAllQuizz = document.querySelector(".allQuizzes");
+    containerAllQuizz.innerHTML = "";
 
     for (let i=0; i < resposta.data.length; i++){        
         const quizz = resposta.data[i];
         containerQuizz.innerHTML += `
-            <div class="boxQuizz" onclick="fazerQuizz()">                    
+            <div class="boxQuizz" onclick="fazerQuizz(this)" id="${quizz.id}">                    
                 <p>${quizz.title}</p>
                 <img src="${quizz.image}">                  
             </div>
@@ -30,14 +30,70 @@ function error(){
     console.log("deu ruim");
 }
 
+function reiniciarHome(){
+    window.location.reload();
+}
+
 // FIM PUXANDO QUIZZ TODOS DO AXIOS 
 
+// INICIO PUXANDO QUIZZ ESPECIFICO
 
-function fazerQuizz(){
+function fazerQuizz(elemento){
     let telaHome = document.querySelector(".telaHome");
     telaHome.classList.add("hide");
     let telaQuizz = document.querySelector(".telaQuizz");
     telaQuizz.classList.remove("hide");
+
+    const idQuizz = elemento.id;
+    
+
+    const promise = axios.get(`${API}/${idQuizz}`);
+    promise.then(renderizarQuizz);
+    promise.catch(error);
+
+}
+
+function renderizarQuizz(resposta){
+
+    const containerQuizz = document.querySelector(".telaQuizz");
+    containerQuizz.innerHTML = `    
+        "<div class="capaQuizz">
+            <p>Qual seu nivel de otaku?</p>
+        </div>"
+        `
+
+    const quizz = resposta.data;
+    console.log(quizz);
+
+    for (let i=0; i < 3; i++){
+    
+        `   
+            <div class="boxPerguntas">
+                <div class="tituloBox">
+                    <p>Quem é mais top?</p> 
+                </div>
+                <div class="opcoesBox">
+                    <div class="alternativaBox">
+                        <img src="img/image-quizz.png">
+                        <p>Texto 1</p>
+                    </div>
+                    <div class="alternativaBox">
+                        <img src="img/image-quizz.png">
+                        <p>Texto 2</p>
+                    </div>
+                    <div class="alternativaBox">
+                        <img src="img/image-quizz.png">
+                        <p>Texto 3</p>
+                    </div>
+                    <div class="alternativaBox">
+                        <img src="img/image-quizz.png">
+                        <p>Texto 4</p>
+                    </div>
+                </div>
+            </div>
+            `
+        }
+    
 }
 
 function novoQuizz(){

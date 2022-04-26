@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <h1>BuzzQuizz</h1>
+        <h1 onclick="reiniciarHome()">BuzzQuizz</h1>
     </header>
 
     <main>
@@ -48,26 +48,26 @@
                 <h2>Todos os Quizzes</h2>
             </div>
             <div class="allQuizzes">
-                
-                <div class="boxQuizz" onclick="fazerQuizz()">                    
-                    <p>Titulo do quizz e estou querendo saber como vai ficar o layout dessa bagaça</p>                    
-                    <img src="img/image-quizz.png">
-                </div>
-                <div class="boxQuizz" onclick="fazerQuizz()">                    
-                    <p>Titulo do QUIZZ</p>
-                </div>
-                <div class="boxQuizz" onclick="fazerQuizz()">                    
-                    <p>Titulo do QUIZZ</p>
-                </div>
-                <div class="boxQuizz" onclick="fazerQuizz()">                    
-                    <p>Titulo do QUIZZ</p>
-                </div>
-                <div class="boxQuizz" onclick="fazerQuizz()">                    
-                    <p>Titulo do QUIZZ</p>
-                </div>
-                <div class="boxQuizz" onclick="fazerQuizz()">                    
-                    <p>Titulo do QUIZZ</p>
-                </div>
+                <!--     
+                    <div class="boxQuizz" onclick="fazerQuizz()">                    
+                        <p>Titulo do quizz e estou querendo saber como vai ficar o layout dessa bagaça</p>                    
+                        <img src="img/image-quizz.png">
+                    </div>
+                    <div class="boxQuizz" onclick="fazerQuizz()">                    
+                        <p>Titulo do QUIZZ</p>
+                    </div>
+                    <div class="boxQuizz" onclick="fazerQuizz()">                    
+                        <p>Titulo do QUIZZ</p>
+                    </div>
+                    <div class="boxQuizz" onclick="fazerQuizz()">                    
+                        <p>Titulo do QUIZZ</p>
+                    </div>
+                    <div class="boxQuizz" onclick="fazerQuizz()">                    
+                        <p>Titulo do QUIZZ</p>
+                    </div>
+                    <div class="boxQuizz" onclick="fazerQuizz()">                    
+                        <p>Titulo do QUIZZ</p>
+                    </div> -->
             </div>
 
         </div>
@@ -87,7 +87,7 @@
         </div>
 
         <!-- Tela Criação do Quizz Parte 2 (Perguntas Quizz) -->
-        <div class="perguntasQuizz  hide">
+        <div class="perguntasQuizz hide">
             <p>Crie suas perguntas</p>
             <div class="containerPerguntas">
             </div>
@@ -169,7 +169,7 @@
                 </div>
                 <div class="botoesFinalizarQuizz">
                     <div class="btnReiniciarQuizz">Reiniciar Quizz</div>
-                    <p>Voltar pra home</p>
+                    <p onclick="reiniciarHome()">Voltar pra home</p>
                 </div>
             </div>
         </div>
