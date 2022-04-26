@@ -352,6 +352,13 @@ input{
     padding-left: 18px;
 }
 
+.telaInicialQuizz input{
+    margin-bottom: 10px;
+}
+.telaInicialQuizz input:nth-last-child(1){
+    margin-bottom: 0px;
+}
+
 ::placeholder{
     font-family: 'Roboto', sans-serif;
     font-style: italic;
@@ -437,7 +444,7 @@ input{
     margin-top: 15px;
 }
 
-.perguntasQuizz button{
+.perguntasQuizz button, .niveisQuizz button{
     margin-top: 44px; 
     margin-bottom: 44px;
     padding: 17px 0px;
@@ -521,22 +528,6 @@ input{
     padding-bottom: 130px;
 }
 
-.niveisQuizz button{
-    margin-top: 44px; 
-    margin-bottom: 44px;
-    padding: 17px 0px;
-    width: 370px;
-    height: 54px;
-    background-color: #EC362D; 
-    border-radius: 15px;
-    box-sizing: initial;
-    border: none;
-    color: #FFF5F4;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-}
 
 .finalizacaoQuizz{
     position: fixed;
@@ -617,6 +608,69 @@ input{
     border: none;
     background-color: inherit;
 }
+
+.loader {
+    color: black;
+    font-size: 10px;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: fixed;
+    top: 280px;
+    text-indent: -9999em;
+    animation: mulShdSpin 1.3s infinite linear;
+    transform: translateZ(0);
+  }
+  
+  @keyframes mulShdSpin {
+    0%,
+    100% {
+      box-shadow: 0 -3em 0 0.2em, 
+      2em -2em 0 0em, 3em 0 0 -1em, 
+      2em 2em 0 -1em, 0 3em 0 -1em, 
+      -2em 2em 0 -1em, -3em 0 0 -1em, 
+      -2em -2em 0 0;
+    }
+    12.5% {
+      box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 
+      3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, 
+      -2em 2em 0 -1em, -3em 0 0 -1em, 
+      -2em -2em 0 -1em;
+    }
+    25% {
+      box-shadow: 0 -3em 0 -0.5em, 
+      2em -2em 0 0, 3em 0 0 0.2em, 
+      2em 2em 0 0, 0 3em 0 -1em, 
+      -2em 2em 0 -1em, -3em 0 0 -1em, 
+      -2em -2em 0 -1em;
+    }
+    37.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+       3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, 
+       -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+       3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, 
+       -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+       3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, 
+       -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+      box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 
+      3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
+      -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+      box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 
+      3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
+      -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+  }
+
 
 
 .hide{
@@ -783,10 +837,5 @@ input{
         width: 221px;
         height: 44px;
     }
-    .telaInicialQuizz input{
-        margin-bottom: 10px;
-    }
-    .telaInicialQuizz input:nth-last-child(1){
-        margin-bottom: 0px;
-    }
+    
 }

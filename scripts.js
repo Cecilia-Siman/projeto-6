@@ -50,6 +50,7 @@ function novoQuizz(){
 let quizz;
 let qtdPerguntas;
 let qtdNiveis;
+let meusQuizzesID = [];
 
 function criarQuizz(){
     quizz = {};
@@ -214,12 +215,17 @@ function disporNiveis(){
 }
 
 function finalizarQuizz(){
-    atualizarObjetoNiveis()    
+    let loader = document.querySelector(".loader");
+    loader.classList.remove("hide");
+    atualizarObjetoNiveis();    
     let teste = conferirNiveis();
     if (teste === false){
         alert("Preencha os dados corretamente!");
     } else finalizar();
     console.log(quizz);
+    const requisicao = axios.post('https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes',quizz);
+    requisicao.then(tratarSucesso);
+    requisicao.catch(tratarErro);
 }
 
 
@@ -263,12 +269,6 @@ function conferirNiveis(){
 }
 
 function finalizar(){
-    let ultimaPagina = document.querySelector(".finalizacaoQuizz");
-    ultimaPagina.classList.remove("hide");
-
-    let pageNiveis = document.querySelector(".niveisQuizz");
-    pageNiveis.classList.add("hide");
-
     ultimaPagina.innerHTML = `<p>Seu quizz está pronto!</p>
     <div>
         <img src="img/image-quizz.png" alt="imagem do quizz criado">
@@ -276,4 +276,22 @@ function finalizar(){
     </div>
     <button class="meuQuizz">Acessar Quizz</button>
     <button class="voltarHome" onclick="window.location.reload()"> <p>Voltar pra home</p></button>` 
+}
+
+
+
+
+function tratarSucesso(retorno){
+    let loader = document.querySelector(".loader");
+    loader.classList.add("hide");
+
+    let ultimaPagina = document.querySelector(".finalizacaoQuizz");
+    ultimaPagina.classList.remove("hide");
+
+    let pageNiveis = document.querySelector(".niveisQuizz");
+    pageNiveis.classList.add("hide");
+}
+
+function tratarErro(){
+    alert("Seu quizz não foi enviado :(");
 }
