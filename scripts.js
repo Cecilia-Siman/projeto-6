@@ -3,22 +3,25 @@
 
 const API = "https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes";
 
+let qtdPerg = 0;
+let qtdResp = 0;
+
 carregarDados()
 
 function carregarDados() {
     const promise = axios.get(API);
-    promise.then(renderizarQuizzes);
+    promise.then(renderizarAllQuizzes);
     promise.catch(error);
 }
 
-function renderizarQuizzes(resposta){
-    const containerQuizz = document.querySelector(".allQuizzes");
-    containerQuizz.innerHTML = "";
+function renderizarAllQuizzes(resposta){
+    const containerAllQuizz = document.querySelector(".allQuizzes");
+    containerAllQuizz.innerHTML = "";
 
     for (let i=0; i < resposta.data.length; i++){        
         const quizz = resposta.data[i];
-        containerQuizz.innerHTML += `
-            <div class="boxQuizz" onclick="fazerQuizz()">                    
+        containerAllQuizz.innerHTML += `
+            <div class="boxQuizz" onclick="fazerQuizz(this)" id="${quizz.id}">                    
                 <p>${quizz.title}</p>
                 <img src="${quizz.image}">                  
             </div>
@@ -30,15 +33,174 @@ function error(){
     console.log("deu ruim");
 }
 
+function reiniciarHome(){
+    window.location.reload();
+}
+
 // FIM PUXANDO QUIZZ TODOS DO AXIOS 
 
+// INICIO PUXANDO QUIZZ ESPECIFICO
 
-function fazerQuizz(){
+
+
+function fazerQuizz(elemento){
     let telaHome = document.querySelector(".telaHome");
     telaHome.classList.add("hide");
     let telaQuizz = document.querySelector(".telaQuizz");
     telaQuizz.classList.remove("hide");
+
+    const idQuizz = elemento.id;    
+
+    const promise = axios.get(`${API}/${idQuizz}`);
+    promise.then(renderizarQuizz);
+    promise.catch(error);
+
 }
+
+function renderizarQuizz(resposta){
+    const containerQuizz = document.querySelector(".telaQuizz");
+    
+    const quizz = resposta.data;
+    console.log(quizz);
+    
+    containerQuizz.innerHTML = `    
+        <div class="capaQuizz">
+            <img src="${quizz.image}">
+            <p>${quizz.title}</p>
+        </div>
+        `
+    
+    const quizzQuestions = (resposta.data.questions);
+    console.log(quizzQuestions)   
+    
+    const quizzLevels = (resposta.data.levels);
+    console.log(quizzLevels);
+  
+    qtdPerg = quizzQuestions.length;
+    sorteioAlternativas = [];
+    
+    for (let i=0; i < quizzQuestions.length; i++){
+        
+        const alternativas = quizzQuestions[i].answers;
+        console.log(alternativas);        
+        
+
+
+        let box = "";
+            
+        for (let i=0; i < alternativas.length; i++){           
+
+            box +=
+                    `
+                    <div class="alternativaBox" id="${i}" validacao="${alternativas[i].isCorrectAnswer}" onclick="marcarAlternativa(this)">
+                        <img src="${alternativas[i].image}">
+                        <p>${alternativas[i].text}</p>
+                    </div>
+                    `
+        }     
+
+        containerQuizz.innerHTML += 
+            `   
+            <div class="boxPerguntas">
+                <div class="tituloBox" style="background-color: ${quizzQuestions[i].color};">
+                    <p>${quizzQuestions[i].title}</p> 
+                </div>
+                <div class="opcoesBox" id="${i}">
+            ` + box +
+            `
+                </div>
+            </div>
+            `   
+           
+    }   
+    
+    console.log(quizzLevels);
+    containerQuizz.innerHTML += 
+            
+            `            
+            <div class="resultadoQuizzBom hide">
+                <div class="boxResultado">
+                    <div class="tituloBoxResultado">
+                        <p>70% de acerto: Você é quase um expert!</p> 
+                    </div>
+                    <div class="resultadoBox">                        
+                            <img src="img/image-quizz.png">
+                            <p>Testando para ver o comportamento da disposição desse comentario no texto asism </p>                                                
+                    </div>
+                </div>
+                <div class="botoesFinalizarQuizz">
+                    <div class="btnReiniciarQuizz">Reiniciar Quizz</div>
+                    <p onclick="reiniciarHome()">Voltar pra home</p>
+                </div>
+            </div>
+            
+
+                       
+            <div class="resultadoQuizzRuim hide">
+                <div class="boxResultado">
+                    <div class="tituloBoxResultado">
+                        <p>70% de acerto: Você é quase um expert!</p> 
+                    </div>
+                    <div class="resultadoBox">                        
+                            <img src="img/image-quizz.png">
+                            <p>Testando para ver o comportamento da disposição desse comentario no texto asism </p>                                                
+                    </div>
+                </div>
+                <div class="botoesFinalizarQuizz">
+                    <div class="btnReiniciarQuizz">Reiniciar Quizz</div>
+                    <p onclick="reiniciarHome()">Voltar pra home</p>
+                </div>
+            </div>
+            `
+
+            
+
+
+
+
+}
+
+// FIM PUXANDO QUIZZ ESPECIFICO
+
+function marcarAlternativa(elemento){
+    console.log(elemento)
+    console.log(elemento.parentNode)
+    
+    let paiAlternativas = elemento.parentNode;
+    
+    let listaAlternativas = paiAlternativas.querySelectorAll(".alternativaBox");
+    console.log(listaAlternativas)
+
+    for (let i=0; i < listaAlternativas.length; i++) {
+        listaAlternativas[i].classList.add("naoSelecionado");        
+        listaAlternativas[i].removeAttribute("onclick");
+        elemento.classList.remove("naoSelecionado");
+        
+        let validacao = listaAlternativas[i].getAttribute("validacao")
+        
+        if (validacao !== "false"){
+            listaAlternativas[i].classList.add("textoVerde");
+            console.log(listaAlternativas[i])
+        }else{
+            listaAlternativas[i].classList.add("textoVermelho");
+        }
+        
+    }    
+
+    qtdResp += 1;
+
+        if (qtdResp === qtdPerg){
+            
+            
+            let telaResultado = document.querySelector(".resultadoQuizzBom");
+            telaResultado.classList.remove("hide");            
+        }
+
+        
+    
+
+}
+
 
 function novoQuizz(){
     let telaCriacao = document.querySelector(".telaInicialQuizz");
