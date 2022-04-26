@@ -17,7 +17,7 @@ function renderizarAllQuizzes(resposta){
 
     for (let i=0; i < resposta.data.length; i++){        
         const quizz = resposta.data[i];
-        containerQuizz.innerHTML += `
+        containerAllQuizz.innerHTML += `
             <div class="boxQuizz" onclick="fazerQuizz(this)" id="${quizz.id}">                    
                 <p>${quizz.title}</p>
                 <img src="${quizz.image}">                  
@@ -44,8 +44,7 @@ function fazerQuizz(elemento){
     let telaQuizz = document.querySelector(".telaQuizz");
     telaQuizz.classList.remove("hide");
 
-    const idQuizz = elemento.id;
-    
+    const idQuizz = elemento.id;    
 
     const promise = axios.get(`${API}/${idQuizz}`);
     promise.then(renderizarQuizz);
@@ -54,47 +53,64 @@ function fazerQuizz(elemento){
 }
 
 function renderizarQuizz(resposta){
-
     const containerQuizz = document.querySelector(".telaQuizz");
-    containerQuizz.innerHTML = `    
-        "<div class="capaQuizz">
-            <p>Qual seu nivel de otaku?</p>
-        </div>"
-        `
-
+    
     const quizz = resposta.data;
     console.log(quizz);
-
-    for (let i=0; i < 3; i++){
     
-        `   
+    containerQuizz.innerHTML = `    
+        "<div class="capaQuizz">
+            <img src="${quizz.image}">
+            <p>${quizz.title}</p>
+        </div>"
+        `
+    
+    const quizzQuestions = (resposta.data.questions);
+    console.log(quizzQuestions)    
+  
+    for (let i=0; i < quizzQuestions.length; i++){
+        
+        const alternativas = quizzQuestions[i].answers;
+        console.log(alternativas);        
+        
+        containerQuizz.innerHTML +=
+            `   
             <div class="boxPerguntas">
-                <div class="tituloBox">
-                    <p>Quem é mais top?</p> 
+                <div class="tituloBox" style="background-color: ${quizzQuestions[i].color};">
+                    <p>${quizzQuestions[i].title}</p> 
                 </div>
-                <div class="opcoesBox">
-                    <div class="alternativaBox">
-                        <img src="img/image-quizz.png">
-                        <p>Texto 1</p>
+                <div class="opcoesBox" id="${i}">
+            `
+
+        for (let i=0; i < alternativas.length; i++){           
+
+            containerQuizz.innerHTML +=
+                    `
+                    <div class="alternativaBox" id="${i}" onclick="marcarAlternativa(this)">
+                        <img src="${alternativas[i].image}">
+                        <p>${alternativas[i].text}</p>
                     </div>
-                    <div class="alternativaBox">
-                        <img src="img/image-quizz.png">
-                        <p>Texto 2</p>
-                    </div>
-                    <div class="alternativaBox">
-                        <img src="img/image-quizz.png">
-                        <p>Texto 3</p>
-                    </div>
-                    <div class="alternativaBox">
-                        <img src="img/image-quizz.png">
-                        <p>Texto 4</p>
-                    </div>
+                    `
+        }        
+        
+        containerQuizz.innerHTML +=
+            
+            `
                 </div>
             </div>
             `
-        }
+    }    
+}
+
+function marcarAlternativa(elemento){
+
+    console.log(elemento)
+    
+    
+    
     
 }
+
 
 function novoQuizz(){
     let telaCriacao = document.querySelector(".telaInicialQuizz");

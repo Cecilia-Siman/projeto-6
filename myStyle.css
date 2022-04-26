@@ -176,13 +176,20 @@ ion-icon:hover{
     align-items: center;
     justify-content: center;
     margin: 69px 0;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57)), url(img/image-quizz.png);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57));
+}
+
+.capaQuizz img{
+    width: 100%;
+    height: 227px;
+    position: relative;
 }
 
 .capaQuizz p{
     font-size: 39px;
     font-weight: 400;
     color: #FFFFFF;
+    position: absolute;
 }
 
 .boxPerguntas, .boxResultado{
@@ -203,7 +210,6 @@ ion-icon:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: orangered;
     text-align: center;
     padding: 5px;
 }
@@ -304,11 +310,17 @@ ion-icon:hover{
     cursor: pointer;
 }
 
+.naoSelecionado{
+    opacity: 0.3;
+}
 
+.textoVerde{
+    color: #009C22;
+}
 
-
-
-
+.textoVermelho{
+    color: #FF4B4B;
+}
 
 .telaInicialQuizz{
     position: fixed;
@@ -709,7 +721,6 @@ input{
         font-size: 13px;
         font-weight: 700;
         margin-top: 8px;
-        color: #000000;
     }
 
     /* Fim Tela Quizz */
