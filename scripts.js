@@ -431,6 +431,9 @@ function finalizar(){
     </div>
     <button class="meuQuizz">Acessar Quizz</button>
     <button class="voltarHome" onclick="window.location.reload()"> <p>Voltar pra home</p></button>` 
+    const requisicao = axios.post('https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes',quizz);
+    requisicao.then(tratarSucesso);
+    requisicao.catch(tratarErro);
 }
 
 function tratarSucesso(retorno){
