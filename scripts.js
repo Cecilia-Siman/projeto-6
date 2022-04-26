@@ -81,11 +81,8 @@ function renderizarQuizz(resposta){
     
     for (let i=0; i < quizzQuestions.length; i++){
         
-        const alternativas = quizzQuestions[i].answers;
-        console.log(alternativas);        
+        const alternativas = quizzQuestions[i].answers.sort(comparador);        
         
-
-
         let box = "";
             
         for (let i=0; i < alternativas.length; i++){           
@@ -134,7 +131,6 @@ function renderizarQuizz(resposta){
                 </div>
             </div>
             
-
                        
             <div class="resultadoQuizzRuim hide">
                 <div class="boxResultado">
@@ -212,7 +208,6 @@ function novoQuizz(){
 let quizz;
 let qtdPerguntas;
 let qtdNiveis;
-let meusQuizzesID = [];
 
 function criarQuizz(){
     quizz = {};
@@ -377,17 +372,12 @@ function disporNiveis(){
 }
 
 function finalizarQuizz(){
-    let loader = document.querySelector(".loader");
-    loader.classList.remove("hide");
-    atualizarObjetoNiveis();    
+    atualizarObjetoNiveis()    
     let teste = conferirNiveis();
     if (teste === false){
         alert("Preencha os dados corretamente!");
     } else finalizar();
-    console.log(quizz);
-    const requisicao = axios.post('https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes',quizz);
-    requisicao.then(tratarSucesso);
-    requisicao.catch(tratarErro);
+    //console.log(quizz);
 }
 
 
@@ -431,6 +421,9 @@ function conferirNiveis(){
 }
 
 function finalizar(){
+    let loader = document.querySelector(".loader");
+    loader.classList.remove("hide");
+    let ultimaPagina = document.querySelector(".finalizacaoQuizz");
     ultimaPagina.innerHTML = `<p>Seu quizz está pronto!</p>
     <div>
         <img src="img/image-quizz.png" alt="imagem do quizz criado">
@@ -439,9 +432,6 @@ function finalizar(){
     <button class="meuQuizz">Acessar Quizz</button>
     <button class="voltarHome" onclick="window.location.reload()"> <p>Voltar pra home</p></button>` 
 }
-
-
-
 
 function tratarSucesso(retorno){
     let loader = document.querySelector(".loader");
@@ -452,6 +442,11 @@ function tratarSucesso(retorno){
 
     let pageNiveis = document.querySelector(".niveisQuizz");
     pageNiveis.classList.add("hide");
+
+    /*let tituloSalvo = retorno.title;
+    let idSalvo = retorno.id;
+    localStorage.setItem(tituloSalvo, idSalvo);*/
+    console.log(retorno);
 }
 
 function tratarErro(){
